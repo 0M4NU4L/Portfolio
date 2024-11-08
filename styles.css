@@ -105,7 +105,7 @@ footer {
     background: transparent;
     padding: 40px 0;
     margin-bottom: 0;
-    text-align: center; /* Center all footer content */
+    text-align: center;
 }
 
 footer.footer-widgets .widget {
@@ -114,7 +114,7 @@ footer.footer-widgets .widget {
 
 footer.footer-widgets {
     color: #777;
-    font-size: 16px; /* Corrected font size from 20x to 16px */
+    font-size: 16px;
 }
 
 footer.footer-widgets a {
@@ -127,7 +127,6 @@ footer.footer-widgets a:hover {
     color: #000;
 }
 
-/* Additional styling for responsiveness */
 footer.footer-widgets .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -139,7 +138,7 @@ footer.footer-widgets .row {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px; /* Space between columns */
+    gap: 15px;
 }
 
 footer.footer-widgets .email-widget,
@@ -158,4 +157,52 @@ footer.footer-widgets .social-widget p {
     footer.footer-widgets .row {
         flex-direction: column;
     }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.animate-left {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.animate-right {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.animate-fade {
+  animation: fadeIn 1.2s ease-out forwards;
 }

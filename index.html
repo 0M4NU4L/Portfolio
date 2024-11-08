@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Nirjhar Barma</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -41,11 +41,11 @@
       <div class="container">
           <div class="row">
               <div class="column email-widget">
-                  <p>nirjharbarma@gmail.com</p>
+                  <a href="mailto:nirjharbarma@gmail.com"><p>nirjharbarma@gmail.com</p></a>
               </div>
               <div class="column social-widget">
                   <p>
-                      <a href="https://discord.com" target="_blank">Discord</a> &nbsp; • &nbsp; 
+                      <a href="https://discord.com" target="_blank">discord</a> &nbsp; • &nbsp; 
                       <a href="https://instagram.com/penguininsidethehoodie" target="_blank">instagram</a> &nbsp; • &nbsp; 
                       <a href="https://www.linkedin.com/in/nirjhar-barma-aa268a226/" target="_blank">linkedin</a> &nbsp; • &nbsp; 
                       <a href="https://github.com/0M4NU4L" target="_blank">github</a>
@@ -54,6 +54,32 @@
           </div>
       </div>
     </footer>
-  
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const largeImage = document.querySelector(".large-image");
+        const smallImage1 = document.querySelector(".small-image1");
+        const smallImage2 = document.querySelector(".small-image2");
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains("large-image")) {
+                entry.target.classList.add("animate-left");
+              } else if (entry.target.classList.contains("small-image1")) {
+                entry.target.classList.add("animate-fade");
+              } else if (entry.target.classList.contains("small-image2")) {
+                entry.target.classList.add("animate-right");
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+    
+        observer.observe(largeImage);
+        observer.observe(smallImage1);
+        observer.observe(smallImage2);
+      });
+    </script>
+    
   </body>
 </html>
